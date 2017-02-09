@@ -13,8 +13,12 @@ namespace CDProject
       Post["/view_Cd"] = _ => {
         Album newAlbum = new Album(Request.Form["add-cd"], Request.Form["add-artist"]);
         newAlbum.Save();
-        return View["view_Cd.cshtml", newAlbum];
+        return View["view_Cd.cshtml", Album.GetAll()];
       };
+      Get["/view_Cd"] = _ => {
+          List<Album> allAlbums = Album.GetAll();
+          return View["view_Cd.cshtml", allAlbums];
+};
     }
   }
 }

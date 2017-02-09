@@ -35,6 +35,10 @@ namespace CDProject.Objects
     {
       _artist = newArtist;
     }
+    public static List<Album> GetAll()
+    {
+      return _albumList;
+    }
 
     public void Save()
     {

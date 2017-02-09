@@ -1,0 +1,16 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h1>List of CDs</h1>
+<ul>
+  @foreach (var song in Model)
+  {
+    <h4>@album.GetTitle()</h4>
+    <p>By: @album.GetArtist()</p>
+  }
+</ul>
+@if (Model.GetCount() == 0)
+{
+  <p>We're sorry, but we’re out of stock!</p>
+}

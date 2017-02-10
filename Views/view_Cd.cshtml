@@ -2,14 +2,13 @@
   Layout="Shared/_Layout.cshtml";
 }
 
-<h1>List of CDs</h1>
-  @foreach (var album in Model)
-  {
-    <h4>@album.GetTitle()</h4>
-    <p> @album.GetArtist()</p>
-  }
-
-@* @if (Model.GetCount== 0)
+<h1>Albums</h1>
+@if (@Model.Count == 0)
 {
-  <p>We're sorry, but we’re out of stock!</p>
-} *@
+  <h3>No categories have been added yet!</h3>
+}
+@foreach (var album in Model)
+{
+  <h3><a href='/albums/@album.GetId()'>@album.GetSongs()</a></h3>
+}
+<p><a href='/'>Back home</a></p>

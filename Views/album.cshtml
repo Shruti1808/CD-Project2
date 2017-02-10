@@ -1,0 +1,13 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h3>Here are all the tasks in this category:</h3>
+<ol>
+@foreach (var song in @Model["songs"])
+{
+  <li>@song.GetName()</li>
+}
+</ol>
+<p><a href='/view_Cd/@Model["category"].GetId()/songs/new'>Add a new song</a></p>
+<p><a href='/'>Return to Main Page</a></p>

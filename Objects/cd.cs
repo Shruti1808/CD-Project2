@@ -9,6 +9,7 @@ namespace CDProject.Objects
     private string  _artist;
     private int _id;
     private static List<Album> _albumList = new List<Album>{};
+    private static List<Song> _songs = new List<Song>{};
 
     public Album (string title, string artist)
     {
@@ -35,6 +36,14 @@ namespace CDProject.Objects
     {
       _artist = newArtist;
     }
+    public int GetId()
+    {
+      return _id;
+    }
+    public List<Song> GetSongs()
+    {
+      return _songs;
+    }
     public static List<Album> GetAll()
     {
       return _albumList;
@@ -44,5 +53,14 @@ namespace CDProject.Objects
     {
       _albumList.Add(this);
     }
+    public static Album Find(int searchId)
+    {
+      return _albumList[searchId-1];
+    }
+    public void AddSong(Song song)
+    {
+      _songs.Add(song);
+    }
+
   }
 }

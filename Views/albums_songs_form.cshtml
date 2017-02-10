@@ -1,0 +1,11 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h1>Add a new task to @Model["album"].GetName()</h1>
+<form action='/tasks' method='post'>
+  <input id='album-id' name='album-id' type='hidden' value='@Model["album"].GetId()'>
+  <label for='song-name'>Song name</label>
+  <input id='song-description' name='song-description' type='text'>
+  <button type='submit'>Add song</button>
+</form>
